@@ -14,12 +14,20 @@ dbConection();
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) =>{
-    res.json({
-        msg: 'Se obtuvo un elemento'    
-    });
-});
 //3.Rutas
+// app.get('/', (req, res) =>{
+//     res.json({
+//         msg: 'Se obtuvo un elemento'    
+//     });
+// });
+
+app.get("/", (req, res) => {
+    return res.json({
+      msg: "Bienvenido al API de Demo",
+      autor: process.env.AUTOR,
+    });
+  });
+  
 app.use("/api/users", require ("./routes/users.routes.js"));
 app.use("/api/products", require("./routes/products.routes.js"));
 app.use("/api/auth", require("./routes/auth.routes.js"));
