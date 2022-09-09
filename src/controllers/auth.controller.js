@@ -81,7 +81,7 @@ const login = async (req, res) => {
         
         const token = await generateJWT(user.id);
     
-        return res.status(400).json({
+        return res.status(201).json({
             ok: true,
             msg: "Acceso otorgado",
             data: user,
