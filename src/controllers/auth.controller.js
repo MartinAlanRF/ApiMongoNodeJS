@@ -58,7 +58,7 @@ const registerUser = async (req, res) =>{
 };
 
 const login = async (req, res) => {
-    try {
+  /*   try { */
         const { userName, password } = req.body;
 
         const user = await User.findOne({ userName });
@@ -80,22 +80,21 @@ const login = async (req, res) => {
         }
         
         const token = await generateJWT(user.id);
-    
 
-        return res.status(200).json({
+        return res.status(201).json({
             ok: true,
             msg: "Acceso otorgado",
             data: user,
             token,
         });
 
-    } catch (error) {
+/*     } catch (error) {
         return res.status(400).json({
             ok: false,
             msg: "Problemas del lado del servidor",
             data: []
         });
-    }
+    } */
    
 }
 
