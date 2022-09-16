@@ -9,7 +9,7 @@ const {
 
 const router = Router();
 
-router.get("/", getProducts);
+router.get("/", validarJWT ,getProducts);
 
 router.post("/", postProducts);
 
