@@ -7,7 +7,7 @@ const User = require ("../models/users")
 const validarJWT = async (req, res, next) =>{
     //req.header es para entrar al encabezado
    // const token = req.header("auth-token");
-    const token = req.header("auth-token");
+    const token = req.header("x-auth-token");
     //Si no hay token osea que sea falso
     if(!token){
         return res.status(401).json({
