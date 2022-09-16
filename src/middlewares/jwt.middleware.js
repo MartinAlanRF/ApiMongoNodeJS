@@ -6,8 +6,8 @@ const User = require ("../models/users")
 //ser el siguiente en este caso el contralador que tenga al lado en index.js
 const validarJWT = async (req, res, next) =>{
     //req.header es para entrar al encabezado
+   // const token = req.header("auth-token");
     const token = req.header("auth-token");
-    
     //Si no hay token osea que sea falso
     if(!token){
         return res.status(401).json({
