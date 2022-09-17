@@ -47,15 +47,12 @@ const upDateProducts = async (req, res) =>{
     });
 }
 
-
 const deleteProducts = async (req, res) =>{
-    const { idProducto } = req.params
-
+    const { idProducto } = req.params;
     const productDeleted = await Product.findByIdAndRemove(idProducto);
-
     return res.json({
-        msg: "Producto eliminado",
-        data:  productDeleted
+      msg: "Producto eliminado exitosamente",
+      data: productDeleted,
     });
 }
 

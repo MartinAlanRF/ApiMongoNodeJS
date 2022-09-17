@@ -1,4 +1,4 @@
-const User = require ("../models/users");
+const User = require ("../models/users.model.js");
 
 
 const getUser = async (req, res) =>{
@@ -16,7 +16,7 @@ const postUser = async (req, res) =>{
 
     const user = {
         email: email,
-        name: userName,
+        userName: userName,
         password: password
     }
 
@@ -30,16 +30,16 @@ const postUser = async (req, res) =>{
 
 const updateUser = async (req, res) => {
     const {idUser} = req.params;
-    const {name} = req.body;
+    const {userName} = req.body;
 
     const user = {
-        name: name,
+        userName: userName,
     }
     //Se coloca el {new: true para que traiga la info del usuario ya actualizada}
-    const userUpdated = await User.findByIdAndUpdate (name, {new: true});
+    const userUpdated = await User.findByIdAndUpdate (idUser, user, {new: true});
 
     return res.json({
-        msg: `Se actualizo el usuario ${name} con el id: ${idUser}`,
+        msg: `Se actualizo el usuario ${userName} con el id: ${idUser}`,
         data: userUpdated,
     });
 };

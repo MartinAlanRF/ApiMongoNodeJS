@@ -1,5 +1,5 @@
 const jwt = require ("jsonwebtoken")
-const User = require ("../models/users")
+const User = require ("../models/users.model.js")
 
 //Ocupa los mismos parametros que un controlador
 // pero se agregar Next es usado para verificar que todo salga bien para 

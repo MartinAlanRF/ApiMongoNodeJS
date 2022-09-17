@@ -6,7 +6,7 @@ const {
     postUser,
     updateUser,
     deleteUser
-} = require ("../controllers/users.ctrl.js")
+} = require ("../controllers/users.controller.js")
 
 const router = Router();
 
@@ -14,8 +14,8 @@ router.get("/", getUser);
 
 router.post("/", postUser);
 
-router.put("/:id", updateUser);
+router.put("/:idUser", updateUser);
 
-router.delete("/:id", deleteUser);
+router.delete("/:idUser", deleteUser);
 
 module.exports = router;

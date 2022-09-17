@@ -1,4 +1,4 @@
-const { Router, urlencoded } = require("express");
+const { Router } = require("express");
 
 const {
     getProducts,
@@ -14,11 +14,11 @@ const router = Router();
 
 router.get("/", validarJWT, getProducts);
 
-router.post("/", validarJWT, postProducts);
+router.post("/", postProducts);
 
-router.put("/:idProduct", validarJWT, upDateProducts);
+router.put("/:idProducto", upDateProducts);
 
-router.delete("/:idProduct", validarJWT, deleteProducts);
+router.delete("/:idProducto", deleteProducts);
 
 //Esta es una exportacion default
 //cuando se usa una con parametros es con {}
