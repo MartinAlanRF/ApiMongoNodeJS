@@ -9,6 +9,17 @@ const getProducts = async (req, res) =>{
         data:  products
     });
 };
+/* Esta función la añadí para obtener la información de un solo producto */
+const getProduct = async (req, res) =>{
+    const {idProducto} = req.params;
+
+    const product = await Product.findById(idProducto);
+
+    return res.json({
+        msg: "Producto encontrado",
+        data: product
+    });
+}
 
 
 const postProducts = async (req, res) =>{
@@ -56,6 +67,9 @@ const deleteProducts = async (req, res) =>{
     });
 }
 
-module.exports = { getProducts, postProducts, upDateProducts, deleteProducts};
+
+
+
+module.exports = { getProducts, postProducts, upDateProducts, deleteProducts, getProduct};
 
 

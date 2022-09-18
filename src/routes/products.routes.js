@@ -4,7 +4,8 @@ const {
     getProducts,
     postProducts,
     upDateProducts,
-    deleteProducts
+    deleteProducts,
+    getProduct
 } = require ("../controllers/products.controller.js");
 
 //Middleware
@@ -19,6 +20,8 @@ router.post("/", postProducts);
 router.put("/:idProducto", upDateProducts);
 
 router.delete("/:idProducto", deleteProducts);
+
+router.get("/:idProducto", getProduct);
 
 //Esta es una exportacion default
 //cuando se usa una con parametros es con {}
