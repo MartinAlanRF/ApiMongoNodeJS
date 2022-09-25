@@ -9,7 +9,7 @@ const { generateJWT } = require("../helpers/jwt.helper");
 
 const registerUser = async (req, res) =>{
     try {
-        const {email, userName, password} = req.body;
+        const {name, lastName, email, userName, password} = req.body;
 
         const emailFound = await User.findOne({email: email});
     
@@ -32,6 +32,8 @@ const registerUser = async (req, res) =>{
         const salt = bcrypt.genSaltSync(10);
     
         const user = {
+            name: name,
+            lastName: lastName,
             email: email,
             userName: userName,
             password: bcrypt.hashSync(password, salt),
@@ -75,7 +77,7 @@ const login = async (req, res) => {
       if(!validatePassword){
         return res.status(400).json({
             ok: false,
-            msg: "Error al iniicar sesion",
+            msg: "Error al iniciar sesion",
         });
         }
         
