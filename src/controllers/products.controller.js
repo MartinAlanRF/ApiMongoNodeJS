@@ -21,7 +21,6 @@ const getProduct = async (req, res) =>{
     });
 }
 
-
 const postProducts = async (req, res) =>{
     const {name, description, price} = req.body
 
