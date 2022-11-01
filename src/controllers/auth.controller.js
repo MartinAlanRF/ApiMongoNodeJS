@@ -68,7 +68,8 @@ const login = async (req, res) => {
         if(!user){
             return res.status(400).json({
                 ok: false,
-                msg: "Error al iniicar sesion",
+                //msg: "Error al iniicar sesion",
+                msg: "Error al iniciar sesión.\n Usuario o cotraseña incorrectos, intente nuevamente",
             });
         }
     
@@ -77,7 +78,8 @@ const login = async (req, res) => {
       if(!validatePassword){
         return res.status(400).json({
             ok: false,
-            msg: "Error al iniciar sesion",
+            //msg: "Error al iniciar sesion",
+            msg: "Error al iniciar sesión.\n Usuario o cotraseña incorrectos, intente nuevamente",
         });
         }
         
