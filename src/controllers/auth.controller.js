@@ -16,7 +16,7 @@ const registerUser = async (req, res) =>{
         if(emailFound) {
             return res.status(400).json({
                 ok: false,
-                msg: `Error, el correo ${emailFound.email} ya esta registrado`,
+                msg: `El correo ${emailFound.email} ya esta registrado`,
             });
         }
         
@@ -25,7 +25,7 @@ const registerUser = async (req, res) =>{
         if(userFound){
             return res.status(400).json({
                 ok: false,
-                msg: `Error, el usuario ${userFound.userName} ya esta registrado, intente nuevamente`,
+                msg: `El usuario ${userFound.userName} ya esta registrado, intente nuevamente`,
             });
         }
 
