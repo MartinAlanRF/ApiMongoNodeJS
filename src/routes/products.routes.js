@@ -15,13 +15,13 @@ const router = Router();
 
 router.get("/", validarJWT, getProducts);
 
-router.post("/", postProducts);
+router.post("/", validarJWT, postProducts);
 
-router.put("/:idProducto", upDateProducts);
+router.put("/:idProducto", validarJWT, upDateProducts);
 
-router.delete("/:idProducto", deleteProducts);
+router.delete("/:idProducto", validarJWT, deleteProducts);
 
-router.get("/:idProducto", getProduct);
+router.get("/:idProducto", validarJWT, getProduct);
 
 //Esta es una exportacion default
 //cuando se usa una con parametros es con {}

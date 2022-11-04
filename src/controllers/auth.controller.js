@@ -9,7 +9,7 @@ const { generateJWT } = require("../helpers/jwt.helper");
 
 const registerUser = async (req, res) =>{
     try {
-        const {name, lastName, email, userName, password} = req.body;
+        const {name, lastName, email, userName, password, rol} = req.body;
 
         const emailFound = await User.findOne({email: email});
     
@@ -37,6 +37,7 @@ const registerUser = async (req, res) =>{
             email: email,
             userName: userName,
             password: bcrypt.hashSync(password, salt),
+            rol: rol
         };
     
         const newUser = await User.create(user);

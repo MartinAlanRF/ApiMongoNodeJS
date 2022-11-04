@@ -21,6 +21,10 @@ const UserSchema = Schema ({
     },
     password: {
         type: String,
+    },
+    rol: {
+        type: String,
+        require: [true, "El rol es requerido"]
     }
 });
 /* Esto es para renombrar el campo id en el back para las resp en el front */
