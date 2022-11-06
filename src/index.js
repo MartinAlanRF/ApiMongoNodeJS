@@ -18,7 +18,7 @@ app.use(express.json());
 //Ruta principal
 app.get("/", (req, res) => {
     return res.json({
-      msg: "Bienvenido al API de Demo",
+      msg: "Bienvenido a mi Api para mi Ecommerce",
       autor: process.env.AUTOR,
     });
   });
