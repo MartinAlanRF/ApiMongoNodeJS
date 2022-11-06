@@ -1,2 +1,2 @@
 # ApiMongoNodeJS
-Ejercicio de api con nodejs y mongoDB
+Api desarrollada en NodeJs y MongoDD para el cosumo desde mi frontEnd para mi proyecto de Ecommerce.
