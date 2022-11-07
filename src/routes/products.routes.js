@@ -13,7 +13,7 @@ const { validarJWT } = require("../middlewares/jwt.middleware.js")
 
 const router = Router();
 
-router.get("/", validarJWT, getProducts);
+router.get("/", getProducts);
 
 router.post("/", validarJWT, postProducts);
 
@@ -21,7 +21,7 @@ router.put("/:idProducto", validarJWT, upDateProducts);
 
 router.delete("/:idProducto", validarJWT, deleteProducts);
 
-router.get("/:idProducto", validarJWT, getProduct);
+router.get("/:idProducto", getProduct);
 
 //Esta es una exportacion default
 //cuando se usa una con parametros es con {}
